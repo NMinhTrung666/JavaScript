@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sản Phẩm</title>
+	<link rel="stylesheet" type="text/css" href="mau.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/ShowSanPham.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<style type="text/css" media="screen">
+</style>
+<body onload="listProducts()">
+
+<div id="sp">
+        <!-- Header -->
+        <div class="header row text-center">
+          <div class="col-lg-3">
+            <p>+84 123 456 789</p>
+          </div>
+          <div class="col-lg-4">
+            <p>doanjavascrip@gmail.com</p>
+          </div>
+          <div class="col-lg-4">
+            <p>33 Xô Viết Nghệ Tĩnh, Quận Hải Châu, TP Đà Nẵng</p>
+          </div>
+        </div>
+        <!-- End Header -->
+        <!-- Menu -->
+        <hr style="background: #0F992F">
+        <nav class="navbar navbar-expand-lg ">
+            <a class="navbar-brand" href="index.html" style="color:green; margin-top: -20px; "><strong>VEGEFOODS</strong></a>
+             <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" style="margin-top: -20px; margin-right: 450px;">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item active"><a href="index.html" class="nav-link" style="color: black;">TRANG CHỦ</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: black;">GIỚI THIỆU</a></li>
+                  <li class="nav-item"><a href="ShowSanPham.html" class="nav-link"style="color: black;">SẢN PHẨM</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"style="color: black;">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Menu -->
+            <!-- Service Slide -->
+        <div style="height: 3px; background:#0F992F"></div>
+
+       <div class="sidebar text-center">
+          <h1 class="text-capitalize" style="text-align: center;">our <strong class="banner-title ">store</strong></h1>
+          <button type="button" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" onclick="home()" style="margin-top: 10px;"><h5>All</h5></button>
+          <button type="button" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" onclick="rau()" style="margin-top: 10px;"><h5>Rau Củ</h5></button>
+          <button type="button" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" onclick="trai()" style="margin-top: 10px;"><h5>Trái Cây</h5></button>
+        </div>
+        <div class="row">
+          <div class="col-10 mx-auto col-md-6">
+            <form>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend ">
+                  <span class="input-group-text search-box" id="search-icon"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder='item....' id="search-item">
+              </div>
+            </form>
+          </div>
+        </div>
+      <div class="container" id="n" style=" margin-left:50px; margin-top: 20px;">
+        <div class="row " id="raucu">
+        </div>
+      
+      </div>
+      <div class="container" id="nn" style=" margin-left:50px; margin-top: 20px; margin-bottom: 20px;">
+        <div class="row " id="traicay">
+        </div>
+      </div>
+      <div id="cart" ondrop="drop(event)" ondragover="allowDrop (event)">
+        <button type="button" class="tn btn btn-light" onclick="thanhtoan()" style="margin-top: 40px;">Thanh Toán</button>
+        <p class="text-light" style="margin-top: 15px;"><strong>Giỏ Hàng</strong></p> <img src="http://www.vongbinsk.vn/skins/user/finance/images/cart.png" id="cardimg"><p id="tong">$ : 0</p>
+         
+      </div>
+</div>
+
+
+
+  <div class="donhang" id="dh">
+    <h2 class="text-center">Thanh toán</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <form name="about">
+          <p><span class="btn btn-success">1</span>Nhập Thông Tin Khách Hàng</p>
+          <p>
+            <input id="hoten" type="text" class="form-control" placeholder=" * Họ và tên">
+          </p>
+          <p>
+            <input id="phone" type="text" class="form-control" placeholder=" * Điện Thoại">
+          </p>
+          <p>
+            <input id="email" type="text" class="form-control" placeholder=" * Email">
+          </p>
+          <p>
+            <input id="address" type="text" class="form-control" placeholder="  Địa chỉ">
+          </p>
+          <textarea id="ghichu" rows="4" cols="50" name="GhiChu" class="form-control" placeholder="Ghi Chú"></textarea>
+            <!-- <p id="ghichu"></p> -->
+        </form>
+      </div>
+      <div class="col-md-4">
+        <form name="about2">
+          <p><span class="btn btn-success">2</span>Nhập Thông Tin Khách Hàng</p>
+          <div class="form-group">
+            <select class="form-control" id="select" onchange="myfunction()">
+              <option value="Chon" disabled selected>Chọn Phương Thức Thanh Toán</option>
+              <option value="1">Internet Banking/ATM nội địa (giảm 5%)</option>
+              <option value="2">Thanh toán qua cổng thanh toán (giảm 10%)</option>
+              <option value="3">Thanh Toán Offline không được giảm</option>
+            </select>
+          </div>
+        </form>
+        <p id="demo"></p>
+        <button type="button" class="btn float-right btn-secondary " onclick="gg()">Áp dụng</button>
+      </div>
+      <div class="col-md-4">
+        <form name="about3">
+          <p><span class="btn btn-success">3</span>Nhập Thông Tin Khách Hàng</p>
+          <div class="card">
+
+            <div class="card-body">
+              <h5>Nhập Mã giảm giá >></h5>
+            </div>
+            <hr />
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p>Tạm Tính</p>
+                    <p>Giảm Giá</p>
+                  </div>
+                  <div class="col-md-6">
+                    <input class="form-control" type="text" id="tamtinh" sttongtienyle="margin-bottom: 5px;" disabled>
+                    <input type="text" class="form-control" id=giamgia disabled
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p>Tổng Cộng</p>
+                  </div>
+                  <div class="col-md-6">
+                    <input class="form-control" type="text" id="sum" disabled>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-success form-control" style="margin-top: 5px;" onclick="check()">Đặt
+                Hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+    <button type="button" class="btn text-center btn-secondary " style="margin-left: 420px;" onclick="tr()">Tiếp tục mua hàng</button>
+    <div id="show">
+      <p id="thongtin"></p>
+    </div>
+
+  </div> 
+
+	<script src="js/main.js" type="text/javascript"></script>
+	<script src="js/ShowSanPham.js" type="text/javascript"></script>
+  <!-- <script src="js/ThanhToan.js" type="text/javascript"></script> -->
+</body>
+</html>
